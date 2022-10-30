@@ -5,8 +5,6 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTyperGUI", "AutoTyperGUI\AutoTyperGUI.csproj", "{D81271DB-75F9-4C56-A26B-80BEB41E55BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{2C6EF344-E50B-4D21-A72E-72503F06F221}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{D81271DB-75F9-4C56-A26B-80BEB41E55BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D81271DB-75F9-4C56-A26B-80BEB41E55BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D81271DB-75F9-4C56-A26B-80BEB41E55BE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C6EF344-E50B-4D21-A72E-72503F06F221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C6EF344-E50B-4D21-A72E-72503F06F221}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C6EF344-E50B-4D21-A72E-72503F06F221}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C6EF344-E50B-4D21-A72E-72503F06F221}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
