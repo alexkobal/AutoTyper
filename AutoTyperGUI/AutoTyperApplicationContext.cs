@@ -22,7 +22,7 @@ namespace AutoTyperGUI
             notifyIcon.Visible = true;
         }
 
-        Form1 configWindow = new Form1();
+        ConfigurationWindow configWindow = new ConfigurationWindow();
         void ShowConfig(object sender, EventArgs e)
         {
             // If we are already showing the window, merely focus it.

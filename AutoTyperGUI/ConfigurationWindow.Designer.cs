@@ -1,6 +1,6 @@
 ﻿namespace AutoTyperGUI
 {
-    partial class Form1
+    partial class ConfigurationWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.testTextBox = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // testTextBox
+            // 
+            this.testTextBox.Location = new System.Drawing.Point(41, 42);
+            this.testTextBox.Name = "testTextBox";
+            this.testTextBox.Size = new System.Drawing.Size(724, 31);
+            this.testTextBox.TabIndex = 0;
+            // 
+            // ConfigurationWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.testTextBox);
+            this.Name = "ConfigurationWindow";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox testTextBox;
     }
 }
 
