@@ -39,9 +39,9 @@ namespace AutoTyperGUI
             Clipboard.SetText(Text);
         }
 
-        private void autoType(AutoTypeSettings settings) // TODO rewrite rand if needed to a more sensible thing
+        private void autoType(AutoTypeSettings settings)
         {
-            // TODO type text
+            SendKeys.Send(Text);
         }
     }
 }

@@ -55,18 +55,18 @@ namespace AutoTyperGUI
             };
             autoTypeKHooks = new KeyboardHook[12]
             {
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F1),
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F2),
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F3),
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F4),
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F5),
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F6),
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F7),
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F8),
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F9),
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F10),
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F11),
-                new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.F12),
+                new KeyboardHook(ModifierKeys.Shift, Keys.F1),
+                new KeyboardHook(ModifierKeys.Shift, Keys.F2),
+                new KeyboardHook(ModifierKeys.Shift, Keys.F3),
+                new KeyboardHook(ModifierKeys.Shift, Keys.F4),
+                new KeyboardHook(ModifierKeys.Shift, Keys.F5),
+                new KeyboardHook(ModifierKeys.Shift, Keys.F6),
+                new KeyboardHook(ModifierKeys.Shift, Keys.F7),
+                new KeyboardHook(ModifierKeys.Shift, Keys.F8),
+                new KeyboardHook(ModifierKeys.Shift, Keys.F9),
+                new KeyboardHook(ModifierKeys.Shift, Keys.F10),
+                new KeyboardHook(ModifierKeys.Shift, Keys.F11),
+                new KeyboardHook(ModifierKeys.Shift, Keys.Q),
             };
 
             AutoTypeSettings autoTypeSettings = new AutoTypeSettings();
