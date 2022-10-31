@@ -78,6 +78,11 @@ namespace AutoTyperGUI
             };
         }
 
+        public KeyboardHook(ModifierKeys modifier, Keys key) : this()
+        {
+            this.RegisterHotKey(modifier, key);
+        }
+
         /// <summary>
         /// Registers a hot key in the system.
         /// </summary>

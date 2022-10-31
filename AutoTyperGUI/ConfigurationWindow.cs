@@ -12,19 +12,10 @@ namespace AutoTyperGUI
 {
     public partial class ConfigurationWindow : Form
     {
-        private int testCounter = 0;
+        private AutoTyper autoTyper = AutoTyper.Instance;
         public ConfigurationWindow()
         {
-            InitializeComponent();
-            KeyboardHook hook = new KeyboardHook();
-            hook.RegisterHotKey(AutoTyperGUI.ModifierKeys.Shift + AutoTyperGUI.ModifierKeys.Control, Keys.F1);
-            hook.KeyPressed += WriteCounter;
-        }
-
-        private void WriteCounter(object sender, KeyPressedEventArgs e)
-        {
-            testCounter++;
-            testTextBox.Text = e.Modifier.ToString() + "+" + e.Key.ToString() + " counter: " + testCounter.ToString();
+            InitializeComponent();            
         }
     }
 }

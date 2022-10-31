@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.testTextBox = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // testTextBox
@@ -46,6 +49,7 @@
             this.Controls.Add(this.testTextBox);
             this.Name = "ConfigurationWindow";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -54,6 +58,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox testTextBox;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
 

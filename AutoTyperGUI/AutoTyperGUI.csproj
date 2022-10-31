@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoTyper.cs" />
+    <Compile Include="Chunk.cs" />
     <Compile Include="KeyboardHook.cs" />
     <Compile Include="ConfigurationWindow.cs">
       <SubType>Form</SubType>
@@ -56,6 +58,7 @@
     <Compile Include="AutoTyperApplicationContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AutoTypeSettings.cs" />
     <EmbeddedResource Include="ConfigurationWindow.resx">
       <DependentUpon>ConfigurationWindow.cs</DependentUpon>
     </EmbeddedResource>
