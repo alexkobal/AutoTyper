@@ -15,7 +15,13 @@ namespace AutoTyperGUI
         private AutoTyper autoTyper = AutoTyper.Instance;
         public ConfigurationWindow()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            typeSpeedNumUpDown.Value = autoTyper.TypeSettings.CharsPerMin;
+        }
+
+        private void typeSpeedNumUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            autoTyper.TypeSettings.CharsPerMin = (int)typeSpeedNumUpDown.Value;
         }
     }
 }

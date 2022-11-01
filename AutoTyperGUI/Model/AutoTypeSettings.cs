@@ -8,11 +8,11 @@ namespace AutoTyperGUI
 {
     internal class AutoTypeSettings
     {
-        public uint CharsPerMin { get; set; }
+        public int CharsPerMin { get; set; }
         public double Randomness { get; set; }
         public AutoTypeSettings() //TODO add constructor implementation instead of hardcoded values
         {
-            CharsPerMin = 45;
+            CharsPerMin = 280; //Hardcoded my typing speed
             Randomness = 0.4;
         }
     }

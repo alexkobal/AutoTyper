@@ -11,6 +11,8 @@ namespace AutoTyperGUI
     {
         private readonly static AutoTyper instance = new AutoTyper();
         public Chunk[] Chunks { get; private set; }
+        public AutoTypeSettings TypeSettings { get; private set; }
+        public KeyboardHook CancelTypingHook { get; private set; }
 
         private AutoTyper()
         {
@@ -36,7 +38,7 @@ namespace AutoTyperGUI
                 "Text9",
                 "Text10",
                 "Text11",
-                "Text12",
+                "This is a test sequence. I'm writing something more sensible, because previously I just copy-pasted the word Long.",
             };
             clipboardKHooks = new KeyboardHook[12]
             {
@@ -69,11 +71,21 @@ namespace AutoTyperGUI
                 new KeyboardHook(ModifierKeys.Shift, Keys.Q),
             };
 
-            AutoTypeSettings autoTypeSettings = new AutoTypeSettings();
+            TypeSettings = new AutoTypeSettings();
             Chunks = new Chunk[12];
             for (int i = 0; i < 12; i++)
             {
-                Chunks[i] = new Chunk(textChunks[i], clipboardKHooks[i], autoTypeKHooks[i], autoTypeSettings);
+                Chunks[i] = new Chunk(textChunks[i], clipboardKHooks[i], autoTypeKHooks[i], TypeSettings);
+            }
+            CancelTypingHook = new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.C);
+            CancelTypingHook.KeyPressed += CancelTypingHook_KeyPressed;
+        }
+
+        private void CancelTypingHook_KeyPressed(object sender, KeyPressedEventArgs e)
+        {
+            foreach (var chunk in Chunks)
+            {
+                chunk.CancelTyping();
             }
         }
     }
