@@ -9,10 +9,20 @@ namespace AutoTyperGUI
 {
     internal class AutoTyper
     {
+        private KeyboardHook cancelTypingKHook;
         private readonly static AutoTyper instance = new AutoTyper();
         public Chunk[] Chunks { get; private set; }
         public AutoTypeSettings TypeSettings { get; private set; }
-        public KeyboardHook CancelTypingHook { get; private set; }
+        public KeyboardHook CancelTypingKHook
+        {
+            get { return cancelTypingKHook; }
+            set
+            {
+                if(cancelTypingKHook != null)
+                    cancelTypingKHook.Dispose(); // Unregisters the previous keyboard hook if any
+                cancelTypingKHook = value;
+            }
+        }
 
         private AutoTyper()
         {
@@ -77,8 +87,8 @@ namespace AutoTyperGUI
             {
                 Chunks[i] = new Chunk(textChunks[i], clipboardKHooks[i], autoTypeKHooks[i], TypeSettings);
             }
-            CancelTypingHook = new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.C);
-            CancelTypingHook.KeyPressed += CancelTypingHook_KeyPressed;
+            CancelTypingKHook = new KeyboardHook(ModifierKeys.Control + ModifierKeys.Shift, Keys.C);
+            CancelTypingKHook.KeyPressed += CancelTypingHook_KeyPressed;
         }
 
         private void CancelTypingHook_KeyPressed(object sender, KeyPressedEventArgs e)

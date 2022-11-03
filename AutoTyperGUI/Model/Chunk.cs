@@ -11,13 +11,33 @@ namespace AutoTyperGUI
 {
     internal class Chunk
     {
-        public string Text { get; set; }
-        public KeyboardHook ClipboardKHook { get; private set; }
-        public KeyboardHook AutoTypeKHook { get; private set; }
-        public AutoTypeSettings TypeSettings { get; private set; }
+        private KeyboardHook clipboardKHook;
+        private KeyboardHook autoTypeKHook;
         private int charCounter;
         private Timer timer;
         private Random random;
+        public string Text { get; set; }
+        public KeyboardHook ClipboardKHook 
+        {
+            get { return clipboardKHook; }
+            set
+            {
+                if(clipboardKHook != null)
+                    clipboardKHook.Dispose(); // Unregisters the previous keyboard hook if any
+                clipboardKHook = value;
+            }
+        }
+        public KeyboardHook AutoTypeKHook
+        {
+            get { return autoTypeKHook; }
+            set
+            {
+                if(autoTypeKHook != null)
+                    autoTypeKHook.Dispose(); // Unregisters the previous keyboard hook if any
+                autoTypeKHook = value;
+            }
+        }
+        public AutoTypeSettings TypeSettings { get; private set; }
 
         public Chunk(string text, KeyboardHook clipboardKHook, KeyboardHook autoTypeKHook, AutoTypeSettings autoTypeSettings)
         {
@@ -31,6 +51,12 @@ namespace AutoTyperGUI
             this.timer.Tick += writeCharOnTick;
             this.charCounter = 0;
             this.random = new Random(Guid.NewGuid().GetHashCode());
+        }
+
+        public void CancelTyping()
+        {
+            timer.Stop();
+            charCounter = 0;
         }
 
         private void copyToClipboardHandler(object sender, KeyPressedEventArgs e)
@@ -67,12 +93,6 @@ namespace AutoTyperGUI
                 SendKeys.Send(Text[charCounter].ToString());
                 charCounter++;
             }
-        }
-
-        public void CancelTyping()
-        {
-            timer.Stop();
-            charCounter = 0;
         }
 
         private double sampleGaussian(Random random, double mean, double stddev)

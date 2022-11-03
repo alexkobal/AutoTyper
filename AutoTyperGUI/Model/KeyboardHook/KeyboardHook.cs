@@ -68,6 +68,9 @@ namespace AutoTyperGUI
         private Window _window = new Window();
         private int _currentId;
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public KeyboardHook()
         {
             // register the event of the inner native window.
@@ -78,6 +81,12 @@ namespace AutoTyperGUI
             };
         }
 
+        /// <summary>
+        /// Constructor that immediately registers a key
+        /// </summary>
+        /// <param name="modifier">The modifiers that are associated with the hot key.</param>
+        /// <param name="key">The key itself that is associated with the hot key.</param>
+        /// <exception cref="InvalidOperationException">Throws an exception if it was not possible to register the key hook</exception>
         public KeyboardHook(ModifierKeys modifier, Keys key) : this()
         {
             this.RegisterHotKey(modifier, key);
@@ -88,6 +97,7 @@ namespace AutoTyperGUI
         /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
+        /// <exception cref="InvalidOperationException">Throws an exception if it was not possible to register the key hook</exception>
         public void RegisterHotKey(ModifierKeys modifier, Keys key)
         {
             // increment the counter.

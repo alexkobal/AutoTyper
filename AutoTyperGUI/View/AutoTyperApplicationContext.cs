@@ -20,20 +20,14 @@ namespace AutoTyperGUI
             notifyIcon.ContextMenu = new ContextMenu(new MenuItem[]
                 { configMenuItem, exitMenuItem });
             notifyIcon.Visible = true;
+            showConfigWindow();
         }
 
         ConfigurationWindow configWindow = new ConfigurationWindow();
         void ShowConfig(object sender, EventArgs e)
         {
             // If we are already showing the window, merely focus it.
-            if (configWindow.Visible)
-            {
-                configWindow.Activate();
-            }
-            else
-            {
-                configWindow.ShowDialog();
-            }
+            showConfigWindow();
         }
 
         void Exit(object sender, EventArgs e)
@@ -42,6 +36,17 @@ namespace AutoTyperGUI
             // Otherwise it will be left behind until the user mouses over.
             notifyIcon.Visible = false;
             Application.Exit();
+        }
+        private void showConfigWindow()
+        {
+            if (configWindow.Visible)
+            {
+                configWindow.Activate();
+            }
+            else
+            {
+                configWindow.ShowDialog();
+            }
         }
     }
 }

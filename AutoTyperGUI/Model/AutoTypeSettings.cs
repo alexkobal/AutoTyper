@@ -10,18 +10,22 @@ namespace AutoTyperGUI
     internal class AutoTypeSettings
     {
         public TypingSpeed TypingSpeed { get; set; }
-        public double StdDeviation { get; set; }
-        public AutoTypeSettings() //TODO add constructor implementation instead of hardcoded values
+        public int StdDeviation { get; set; }
+        public AutoTypeSettings(int charsPerMin = 300, int stdDeviation = 30) // Normal people typing parameters
         {
             TypingSpeed = new TypingSpeed();
-            TypingSpeed.CharsPerMin = 280; //Hardcoded my typing speed
-            StdDeviation = 3; //Hardcoded my variance
+            TypingSpeed.CharsPerMin = charsPerMin;
+            StdDeviation = stdDeviation;
         }
     }
 
     internal class TypingSpeed
     {
         private int charsPerMin;
+        public TypingSpeed(int charsPerMin = 0)
+        {
+            this.charsPerMin = charsPerMin;
+        }
         public int CharsPerMin
         {
             get { return charsPerMin; }
