@@ -67,6 +67,9 @@ namespace AutoTyperGUI
 
         private Window _window = new Window();
         private int _currentId;
+        //text property
+        private ModifierKeys _modifierKeys;
+        private Keys _keys;
 
         /// <summary>
         /// Default constructor
@@ -90,6 +93,8 @@ namespace AutoTyperGUI
         public KeyboardHook(ModifierKeys modifier, Keys key) : this()
         {
             this.RegisterHotKey(modifier, key);
+            _modifierKeys = modifier;
+            _keys = key;
         }
 
         /// <summary>
@@ -111,6 +116,11 @@ namespace AutoTyperGUI
                 throw new InvalidOperationException("Couldn’t register the hot key. Error Message: " + errorM);
             }
                 
+        }
+
+        override public string ToString()
+        {
+            return _modifierKeys.ToString()+"+"+_keys.ToString();
         }
 
         /// <summary>

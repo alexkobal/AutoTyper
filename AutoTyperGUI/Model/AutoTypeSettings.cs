@@ -41,5 +41,9 @@ namespace AutoTyperGUI
             get { return 60000 / charsPerMin; }
             set { charsPerMin = 60000 / value; }
         }
+        public override string ToString()
+        {
+            return charsPerMin.ToString();
+        }
     }
 }
