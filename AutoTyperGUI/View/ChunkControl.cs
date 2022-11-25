@@ -22,8 +22,8 @@ namespace AutoTyperGUI.View
         public void updateView()
         {
             textBox.Text = Chunk.Text;
-            clipboardKHButton.Text = Chunk.ClipboardKHook.ToString();
-            autoTypeKHButton.Text = Chunk.AutoTypeKHook.ToString();
+            clipboardKHButton.Text = Chunk.ClipboardKHook.HotKey.ToString();
+            autoTypeKHButton.Text = Chunk.AutoTypeKHook.HotKey.ToString();
         }
 
         private void autoTypeKHButton_KeyDown(object sender, KeyEventArgs e)

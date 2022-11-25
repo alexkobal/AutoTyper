@@ -49,5 +49,13 @@ namespace AutoTyperGUI
 
         public static explicit operator ModifierKeys(uint i) => getByValue(i);
         public override string ToString() => Text;
+        public override bool Equals(object obj)
+        {
+            ModifierKeys mk = obj as ModifierKeys;
+            if (mk != null)
+                return false;
+            else
+                return base.Equals((ModifierKeys)obj) && mk.Value == this.Value;
+        }
     }
 }
