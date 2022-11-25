@@ -56,22 +56,21 @@ namespace AutoTyperGUI
 
         private void updateView()
         {
-            for(int i = 0; i < 12; i++)
+            foreach(var chunkControl in chunkControls)
             {
-                this.chunkControls[i].updateView(autoTyper.Chunks[i]);
+                chunkControl.updateView();
             }
         }
 
         private void initChunkControls()
         {
             this.chunkControls = new List<View.ChunkControl>();
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < autoTyper.Chunks.Length; i++)
             {
-                this.chunkControls.Add(new AutoTyperGUI.View.ChunkControl());
+                this.chunkControls.Add(new View.ChunkControl(autoTyper.Chunks[i]));
                 this.chunkControls[i].TabIndex = i;
                 this.chunkControls[i].Name = "chunkControl" + i.ToString();
                 this.chunkControls[i].Size = new System.Drawing.Size(700, 213);
-                this.chunkControls[i].ChunkID = i;
                 this.flowLayoutPanel1.Controls.Add(this.chunkControls[i]);
             }
         }

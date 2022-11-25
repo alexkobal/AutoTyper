@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Model\AutoTyper.cs" />
     <Compile Include="Model\Chunk.cs" />
+    <Compile Include="Model\KeyboardHook\HotKey.cs" />
     <Compile Include="Model\KeyboardHook\KeyboardHook.cs" />
     <Compile Include="View\ChunkControl.cs">
       <SubType>UserControl</SubType>

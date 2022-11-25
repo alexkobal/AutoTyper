@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.autotypeLabel = new System.Windows.Forms.Label();
             this.autoTypeKHButton = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
             this.clipboardKHButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.clipboardLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,11 +44,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.label2, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.autotypeLabel, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.autoTypeKHButton, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.clipboardKHButton, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.clipboardLabel, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -58,20 +58,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(510, 213);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // label2
+            // autotypeLabel
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.autotypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(385, 56);
-            this.label2.Margin = new System.Windows.Forms.Padding(3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 154);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Change \"autotype\" keyboard hook";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.autotypeLabel.AutoSize = true;
+            this.autotypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autotypeLabel.Location = new System.Drawing.Point(385, 56);
+            this.autotypeLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.autotypeLabel.Name = "autotypeLabel";
+            this.autotypeLabel.Size = new System.Drawing.Size(122, 154);
+            this.autotypeLabel.TabIndex = 4;
+            this.autotypeLabel.Text = "Change \"autotype\" keyboard hook";
+            this.autotypeLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // autoTypeKHButton
             // 
@@ -85,6 +85,7 @@
             this.autoTypeKHButton.Size = new System.Drawing.Size(118, 43);
             this.autoTypeKHButton.TabIndex = 3;
             this.autoTypeKHButton.UseVisualStyleBackColor = true;
+            this.autoTypeKHButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.autoTypeKHButton_KeyDown);
             // 
             // textBox
             // 
@@ -98,6 +99,7 @@
             this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox.Size = new System.Drawing.Size(249, 207);
             this.textBox.TabIndex = 0;
+            this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // clipboardKHButton
             // 
@@ -111,21 +113,22 @@
             this.clipboardKHButton.Size = new System.Drawing.Size(117, 43);
             this.clipboardKHButton.TabIndex = 1;
             this.clipboardKHButton.UseVisualStyleBackColor = true;
+            this.clipboardKHButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.clipboardKHButton_KeyDown);
             // 
-            // label1
+            // clipboardLabel
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.clipboardLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(258, 56);
-            this.label1.Margin = new System.Windows.Forms.Padding(3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 154);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Change \"copy to clipboard\" keyboard hook";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.clipboardLabel.AutoSize = true;
+            this.clipboardLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clipboardLabel.Location = new System.Drawing.Point(258, 56);
+            this.clipboardLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.clipboardLabel.Name = "clipboardLabel";
+            this.clipboardLabel.Size = new System.Drawing.Size(121, 154);
+            this.clipboardLabel.TabIndex = 2;
+            this.clipboardLabel.Text = "Change \"copy to clipboard\" keyboard hook";
+            this.clipboardLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ChunkControl
             // 
@@ -144,10 +147,10 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label autotypeLabel;
         private System.Windows.Forms.Button autoTypeKHButton;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Button clipboardKHButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label clipboardLabel;
     }
 }
