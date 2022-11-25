@@ -16,13 +16,18 @@ namespace AutoTyperGUI
         private AutoTyper autoTyper = AutoTyper.Instance;
         private SaveFileDialog saveFileDialog;
         private OpenFileDialog openFileDialog;
+        private List<View.ChunkControl> chunkControls;
+
         public ConfigurationWindow()
         {
             InitializeComponent();
+            initChunkControls();
+
             saveFileDialog = new SaveFileDialog();
             saveFileDialog.DefaultExt = "xml";
             openFileDialog = new OpenFileDialog();
             openFileDialog.DefaultExt = "xml";
+            updateView();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,12 +45,35 @@ namespace AutoTyperGUI
             {
                 autoTyper.open(openFileDialog.FileName);
             }
+            updateView();
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var settingsform = new Settings();
             settingsform.Visible = true;
+        }
+
+        private void updateView()
+        {
+            for(int i = 0; i < 12; i++)
+            {
+                this.chunkControls[i].updateView(autoTyper.Chunks[i]);
+            }
+        }
+
+        private void initChunkControls()
+        {
+            this.chunkControls = new List<View.ChunkControl>();
+            for (int i = 0; i < 12; i++)
+            {
+                this.chunkControls.Add(new AutoTyperGUI.View.ChunkControl());
+                this.chunkControls[i].TabIndex = i;
+                this.chunkControls[i].Name = "chunkControl" + i.ToString();
+                this.chunkControls[i].Size = new System.Drawing.Size(700, 213);
+                this.chunkControls[i].ChunkID = i;
+                this.flowLayoutPanel1.Controls.Add(this.chunkControls[i]);
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AutoTyperGUI
 {
-    internal class AutoTypeSettings
+    public class AutoTypeSettings
     {
         public TypingSpeed TypingSpeed { get; set; }
         public int StdDeviation { get; set; }
@@ -19,7 +19,7 @@ namespace AutoTyperGUI
         }
     }
 
-    internal class TypingSpeed
+    public class TypingSpeed
     {
         private int charsPerMin;
         public TypingSpeed(int charsPerMin = 0)

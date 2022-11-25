@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace AutoTyperGUI
 {
-    internal class Chunk
+    public class Chunk
     {
         private KeyboardHook clipboardKHook;
         private KeyboardHook autoTypeKHook;
