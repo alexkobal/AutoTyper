@@ -234,7 +234,7 @@
             this.chunk11savebutton.TabIndex = 38;
             this.chunk11savebutton.Text = "Save text";
             this.chunk11savebutton.UseVisualStyleBackColor = true;
-            this.chunk11savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk11savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk10savebutton
             // 
@@ -245,7 +245,7 @@
             this.chunk10savebutton.TabIndex = 37;
             this.chunk10savebutton.Text = "Save text";
             this.chunk10savebutton.UseVisualStyleBackColor = true;
-            this.chunk10savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk10savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk9savebutton
             // 
@@ -256,7 +256,7 @@
             this.chunk9savebutton.TabIndex = 36;
             this.chunk9savebutton.Text = "Save text";
             this.chunk9savebutton.UseVisualStyleBackColor = true;
-            this.chunk9savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk9savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk8savebutton
             // 
@@ -267,7 +267,7 @@
             this.chunk8savebutton.TabIndex = 35;
             this.chunk8savebutton.Text = "Save text";
             this.chunk8savebutton.UseVisualStyleBackColor = true;
-            this.chunk8savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk8savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk7savebutton
             // 
@@ -278,7 +278,7 @@
             this.chunk7savebutton.TabIndex = 34;
             this.chunk7savebutton.Text = "Save text";
             this.chunk7savebutton.UseVisualStyleBackColor = true;
-            this.chunk7savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk7savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk6savebutton
             // 
@@ -289,7 +289,7 @@
             this.chunk6savebutton.TabIndex = 33;
             this.chunk6savebutton.Text = "Save text";
             this.chunk6savebutton.UseVisualStyleBackColor = true;
-            this.chunk6savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk6savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk5savebutton
             // 
@@ -300,7 +300,7 @@
             this.chunk5savebutton.TabIndex = 32;
             this.chunk5savebutton.Text = "Save text";
             this.chunk5savebutton.UseVisualStyleBackColor = true;
-            this.chunk5savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk5savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk4savebutton
             // 
@@ -311,7 +311,7 @@
             this.chunk4savebutton.TabIndex = 31;
             this.chunk4savebutton.Text = "Save text";
             this.chunk4savebutton.UseVisualStyleBackColor = true;
-            this.chunk4savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk4savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk3savebutton
             // 
@@ -322,7 +322,7 @@
             this.chunk3savebutton.TabIndex = 30;
             this.chunk3savebutton.Text = "Save text";
             this.chunk3savebutton.UseVisualStyleBackColor = true;
-            this.chunk3savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk3savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk2savebutton
             // 
@@ -333,7 +333,7 @@
             this.chunk2savebutton.TabIndex = 29;
             this.chunk2savebutton.Text = "Save text";
             this.chunk2savebutton.UseVisualStyleBackColor = true;
-            this.chunk2savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk2savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk1savebutton
             // 
@@ -344,7 +344,7 @@
             this.chunk1savebutton.TabIndex = 28;
             this.chunk1savebutton.Text = "Save text";
             this.chunk1savebutton.UseVisualStyleBackColor = true;
-            this.chunk1savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk1savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk0savebutton
             // 
@@ -355,7 +355,7 @@
             this.chunk0savebutton.TabIndex = 27;
             this.chunk0savebutton.Text = "Save text";
             this.chunk0savebutton.UseVisualStyleBackColor = true;
-            this.chunk0savebutton.Click += new System.EventHandler(this.chunksavebutton_Click);
+            this.chunk0savebutton.Click += new System.EventHandler(this.chunkSaveButton_Click);
             // 
             // chunk11panel
             // 
@@ -395,7 +395,7 @@
             this.chunk11autobutton.TabIndex = 13;
             this.chunk11autobutton.Text = "Auto Type";
             this.chunk11autobutton.UseVisualStyleBackColor = true;
-            this.chunk11autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk11autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk11clipbutton
             // 
@@ -405,7 +405,7 @@
             this.chunk11clipbutton.TabIndex = 12;
             this.chunk11clipbutton.Text = "Clipboard";
             this.chunk11clipbutton.UseVisualStyleBackColor = true;
-            this.chunk11clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk11clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk10panel
             // 
@@ -445,7 +445,7 @@
             this.chunk10autobutton.TabIndex = 13;
             this.chunk10autobutton.Text = "Auto Type";
             this.chunk10autobutton.UseVisualStyleBackColor = true;
-            this.chunk10autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk10autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk10clipbutton
             // 
@@ -455,7 +455,7 @@
             this.chunk10clipbutton.TabIndex = 12;
             this.chunk10clipbutton.Text = "Clipboard";
             this.chunk10clipbutton.UseVisualStyleBackColor = true;
-            this.chunk10clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk10clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk9panel
             // 
@@ -495,7 +495,7 @@
             this.chunk9autobutton.TabIndex = 13;
             this.chunk9autobutton.Text = "Auto Type";
             this.chunk9autobutton.UseVisualStyleBackColor = true;
-            this.chunk9autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk9autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk9clipbutton
             // 
@@ -505,7 +505,7 @@
             this.chunk9clipbutton.TabIndex = 12;
             this.chunk9clipbutton.Text = "Clipboard";
             this.chunk9clipbutton.UseVisualStyleBackColor = true;
-            this.chunk9clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk9clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk8panel
             // 
@@ -545,7 +545,7 @@
             this.chunk8autobutton.TabIndex = 13;
             this.chunk8autobutton.Text = "Auto Type";
             this.chunk8autobutton.UseVisualStyleBackColor = true;
-            this.chunk8autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk8autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk8clipbutton
             // 
@@ -555,7 +555,7 @@
             this.chunk8clipbutton.TabIndex = 12;
             this.chunk8clipbutton.Text = "Clipboard";
             this.chunk8clipbutton.UseVisualStyleBackColor = true;
-            this.chunk8clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk8clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk7panel
             // 
@@ -595,7 +595,7 @@
             this.chunk7autobutton.TabIndex = 13;
             this.chunk7autobutton.Text = "Auto Type";
             this.chunk7autobutton.UseVisualStyleBackColor = true;
-            this.chunk7autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk7autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk7clipbutton
             // 
@@ -605,7 +605,7 @@
             this.chunk7clipbutton.TabIndex = 12;
             this.chunk7clipbutton.Text = "Clipboard";
             this.chunk7clipbutton.UseVisualStyleBackColor = true;
-            this.chunk7clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk7clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk6panel
             // 
@@ -645,7 +645,7 @@
             this.chunk6autobutton.TabIndex = 13;
             this.chunk6autobutton.Text = "Auto Type";
             this.chunk6autobutton.UseVisualStyleBackColor = true;
-            this.chunk6autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk6autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk6clipbutton
             // 
@@ -655,7 +655,7 @@
             this.chunk6clipbutton.TabIndex = 12;
             this.chunk6clipbutton.Text = "Clipboard";
             this.chunk6clipbutton.UseVisualStyleBackColor = true;
-            this.chunk6clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk6clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk5panel
             // 
@@ -695,7 +695,7 @@
             this.chunk5autobutton.TabIndex = 13;
             this.chunk5autobutton.Text = "Auto Type";
             this.chunk5autobutton.UseVisualStyleBackColor = true;
-            this.chunk5autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk5autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk5clipbutton
             // 
@@ -705,7 +705,7 @@
             this.chunk5clipbutton.TabIndex = 12;
             this.chunk5clipbutton.Text = "Clipboard";
             this.chunk5clipbutton.UseVisualStyleBackColor = true;
-            this.chunk5clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk5clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk4panel
             // 
@@ -745,7 +745,7 @@
             this.chunk4autobutton.TabIndex = 13;
             this.chunk4autobutton.Text = "Auto Type";
             this.chunk4autobutton.UseVisualStyleBackColor = true;
-            this.chunk4autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk4autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk4clipbutton
             // 
@@ -755,7 +755,7 @@
             this.chunk4clipbutton.TabIndex = 12;
             this.chunk4clipbutton.Text = "Clipboard";
             this.chunk4clipbutton.UseVisualStyleBackColor = true;
-            this.chunk4clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk4clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk3panel
             // 
@@ -795,7 +795,7 @@
             this.chunk3autobutton.TabIndex = 13;
             this.chunk3autobutton.Text = "Auto Type";
             this.chunk3autobutton.UseVisualStyleBackColor = true;
-            this.chunk3autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk3autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk3clipbutton
             // 
@@ -805,7 +805,7 @@
             this.chunk3clipbutton.TabIndex = 12;
             this.chunk3clipbutton.Text = "Clipboard";
             this.chunk3clipbutton.UseVisualStyleBackColor = true;
-            this.chunk3clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk3clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk2panel
             // 
@@ -845,7 +845,7 @@
             this.chunk2autobutton.TabIndex = 13;
             this.chunk2autobutton.Text = "Auto Type";
             this.chunk2autobutton.UseVisualStyleBackColor = true;
-            this.chunk2autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk2autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk2clipbutton
             // 
@@ -855,7 +855,7 @@
             this.chunk2clipbutton.TabIndex = 12;
             this.chunk2clipbutton.Text = "Clipboard";
             this.chunk2clipbutton.UseVisualStyleBackColor = true;
-            this.chunk2clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk2clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk1panel
             // 
@@ -895,7 +895,7 @@
             this.chunk1autobutton.TabIndex = 13;
             this.chunk1autobutton.Text = "Auto Type";
             this.chunk1autobutton.UseVisualStyleBackColor = true;
-            this.chunk1autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk1autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk1clipbutton
             // 
@@ -905,7 +905,7 @@
             this.chunk1clipbutton.TabIndex = 12;
             this.chunk1clipbutton.Text = "Clipboard";
             this.chunk1clipbutton.UseVisualStyleBackColor = true;
-            this.chunk1clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk1clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk0panel
             // 
@@ -945,7 +945,7 @@
             this.chunk0autobutton.TabIndex = 13;
             this.chunk0autobutton.Text = "Auto Type";
             this.chunk0autobutton.UseVisualStyleBackColor = true;
-            this.chunk0autobutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk0autobutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk0clipbutton
             // 
@@ -955,7 +955,7 @@
             this.chunk0clipbutton.TabIndex = 12;
             this.chunk0clipbutton.Text = "Clipboard";
             this.chunk0clipbutton.UseVisualStyleBackColor = true;
-            this.chunk0clipbutton.Click += new System.EventHandler(this.chunkhookutton_Click);
+            this.chunk0clipbutton.Click += new System.EventHandler(this.chunkHookButton_Click);
             // 
             // chunk11textBox
             // 

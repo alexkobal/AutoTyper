@@ -27,10 +27,10 @@ namespace AutoTyperGUI
             openFileDialog = new OpenFileDialog();
             openFileDialog.DefaultExt = "xml";
             this.KeyPreview = true;
-            refreshTextBoxs();
+            refreshTextBoxes();
         }
 
-        private void refreshTextBoxs()
+        private void refreshTextBoxes()
         {
             int i = 0;
             foreach (Chunk c in autoTyper.Chunks)
@@ -42,13 +42,13 @@ namespace AutoTyperGUI
             }
         }
 
-        private void chunksavebutton_Click(object sender, EventArgs e)
+        private void chunkSaveButton_Click(object sender, EventArgs e)
         {
             int idx = (int)Char.GetNumericValue(((Button)sender).Name[5]);
             autoTyper.Chunks[idx].Text = (this.Controls.Find("chunk" + idx + "textBox", true)[0]).Text;
         }
 
-        private void chunkhookutton_Click(object sender, EventArgs e)
+        private void chunkHookButton_Click(object sender, EventArgs e)
         {
             if (!keyCombButtonPressed)
             {
@@ -103,7 +103,7 @@ namespace AutoTyperGUI
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 autoTyper.open(openFileDialog.FileName);
-                refreshTextBoxs();
+                refreshTextBoxes();
             }
         }
 
