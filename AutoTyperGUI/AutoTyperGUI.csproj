@@ -69,6 +69,12 @@
     <Compile Include="Model\AutoTyper.cs" />
     <Compile Include="Model\Chunk.cs" />
     <Compile Include="Model\KeyboardHook\KeyboardHook.cs" />
+    <Compile Include="View\ChunkControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ChunkControl.Designer.cs">
+      <DependentUpon>ChunkControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ConfigurationWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="View\Settings\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\ChunkControl.resx">
+      <DependentUpon>ChunkControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ConfigurationWindow.resx">
       <DependentUpon>ConfigurationWindow.cs</DependentUpon>
     </EmbeddedResource>
