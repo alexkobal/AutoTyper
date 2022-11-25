@@ -22,8 +22,8 @@ namespace AutoTyperGUI.View
         public void updateView()
         {
             textBox.Text = Chunk.Text;
-            clipboardKHButton.Text = Chunk.ClipboardKHook.HotKey.ToString();
-            autoTypeKHButton.Text = Chunk.AutoTypeKHook.HotKey.ToString();
+            clipboardKHButton.Text = Chunk.ClipboardKHook.ToString();
+            autoTypeKHButton.Text = Chunk.AutoTypeKHook.ToString();
         }
 
         private void autoTypeKHButton_KeyDown(object sender, KeyEventArgs e)
@@ -36,7 +36,7 @@ namespace AutoTyperGUI.View
             {
                 autoTypeKHButton.Text = modifier.ToString() + "+" + key.ToString();
                 autotypeLabel.Focus(); // To unfocus the button after assignment
-                //Chunk.AutoTypeKHook = 
+                Chunk.AutoTypeKHook.HotKey = new Model.KeyboardHook.HotKey(modifier, key);
             }
         }
         private void clipboardKHButton_KeyDown(object sender, KeyEventArgs e)
@@ -49,7 +49,8 @@ namespace AutoTyperGUI.View
             {
                 clipboardKHButton.Text = modifier.ToString() + "+" + key.ToString();
                 clipboardLabel.Focus(); // To unfocus the button after assignment
-                //Chunk.AutoTypeKHook = new KeyboardHook(modifier, key);
+                Chunk.ClipboardKHook.HotKey = new Model.KeyboardHook.HotKey(modifier, key);
+                clipboardKHButton.Text = Chunk.ClipboardKHook.ToString();
             }
         }
 

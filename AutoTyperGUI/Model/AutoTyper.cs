@@ -66,6 +66,7 @@ namespace AutoTyperGUI
                                 }
                                 xmlTextWriter.WriteEndElement();
                             }
+                            xmlTextWriter.WriteEndElement();
                         }
                         xmlTextWriter.WriteEndElement();
                     }
@@ -89,12 +90,12 @@ namespace AutoTyperGUI
             XmlTextReader xmlTextReader = new XmlTextReader(fileName);
 
             int i = 0;
+            KeyboardHook currentHook = null;
+            ModifierKeys currentModifierKeys = null;
+            Keys currentKey = 0;
+
             while (xmlTextReader.Read())
             {
-                KeyboardHook currentHook = null;
-                ModifierKeys currentModifierKeys = null;
-                Keys currentKey = 0;
-
                 switch (xmlTextReader.NodeType)
                 {
                     case XmlNodeType.Element:

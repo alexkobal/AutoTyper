@@ -20,22 +20,10 @@ namespace AutoTyperGUI
         public KeyboardHook ClipboardKHook 
         {
             get { return clipboardKHook; }
-            set
-            {
-                if(clipboardKHook != null)
-                    clipboardKHook.Dispose(); // Unregisters the previous keyboard hook if any
-                clipboardKHook = value;
-            }
         }
         public KeyboardHook AutoTypeKHook
         {
             get { return autoTypeKHook; }
-            set
-            {
-                if(autoTypeKHook != null)
-                    autoTypeKHook.Dispose(); // Unregisters the previous keyboard hook if any
-                autoTypeKHook = value;
-            }
         }
 
         public AutoTypeSettings TypeSettings { get; private set; }
@@ -43,8 +31,8 @@ namespace AutoTyperGUI
         public Chunk(string text, KeyboardHook clipboardKHook, KeyboardHook autoTypeKHook, AutoTypeSettings autoTypeSettings)
         {
             this.Text = text;
-            this.ClipboardKHook = clipboardKHook;
-            this.AutoTypeKHook = autoTypeKHook;
+            this.clipboardKHook = clipboardKHook;
+            this.autoTypeKHook = autoTypeKHook;
             this.TypeSettings = autoTypeSettings;
             this.ClipboardKHook.KeyPressed += copyToClipboardHandler;
             this.AutoTypeKHook.KeyPressed += autoTypeHandler;

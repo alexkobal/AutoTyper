@@ -125,7 +125,7 @@ namespace AutoTyperGUI
             if (!t)
             {
                 string errorM = Win32ErrorHandler.GetLastErrorString();
-                throw new InvalidOperationException("Couldn’t register the hot key: " + HotKey.ToString() + " Error Message: " + errorM);
+                //throw new InvalidOperationException("Couldn’t register the hot key: " + HotKey.ToString() + " Error Message: " + errorM);
             }
             else
             {
@@ -140,13 +140,20 @@ namespace AutoTyperGUI
             if (!t)
             {
                 string errorM = Win32ErrorHandler.GetLastErrorString();
-                throw new InvalidOperationException("Couldn’t unregister the hot key: " + HotKey.ToString() + " Error Message: " + errorM);
+                //throw new InvalidOperationException("Couldn’t unregister the hot key: " + HotKey.ToString() + " Error Message: " + errorM);
             }
             else
             {
                 _hotKey = null;
             }
             
+        }
+
+        public override string ToString()
+        {
+            if (HotKey != null)
+                return HotKey.ToString();
+            return "Error";
         }
 
         /// <summary>
