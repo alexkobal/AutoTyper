@@ -5,13 +5,35 @@ using System.Windows.Forms;
 
 namespace AutoTyperGUI.View
 {
+    /// <summary>
+    /// Class for the main configuration window view
+    /// </summary>
     public partial class ConfigurationWindow : Form
     {
+        /// <summary>
+        /// Refference to the AutoTyper model instance
+        /// </summary>
         private AutoTyper autoTyper = AutoTyper.Instance;
+
+        /// <summary>
+        /// Save File dialog window
+        /// </summary>
         private SaveFileDialog saveFileDialog;
+
+        /// <summary>
+        /// Open File dialog window
+        /// </summary>
         private OpenFileDialog openFileDialog;
+
+        /// <summary>
+        /// List of the connected ChunkControl Views
+        /// </summary>
         private List<View.ChunkControl> chunkControls;
 
+        /// <summary>
+        /// Constructor. Initializes the configuration window
+        /// Calls initialization of the ChunkControl views
+        /// </summary>
         public ConfigurationWindow()
         {
             InitializeComponent();
@@ -24,6 +46,12 @@ namespace AutoTyperGUI.View
             updateView();
         }
 
+        /// <summary>
+        /// Event handler for "Save" menu item
+        /// Opens a save file dialog
+        /// </summary>
+        /// <param name="sender">Event sender object</param>
+        /// <param name="e">Event arguments</param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -32,22 +60,36 @@ namespace AutoTyperGUI.View
             }
         }
 
+        /// <summary>
+        /// Event handler for "Load" menu item
+        /// Opens an open file dialog
+        /// </summary>
+        /// <param name="sender">Event sender object</param>
+        /// <param name="e">Event arguments</param>
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //TODO: Ránézni erre a szarra.
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                autoTyper.open(openFileDialog.FileName);
+                autoTyper.load(openFileDialog.FileName);
             }
             updateView();
         }
 
+        /// <summary>
+        /// Event handler for "Settings" menu item
+        /// Opens the settings window
+        /// </summary>
+        /// <param name="sender">Event sender object</param>
+        /// <param name="e">Event arguments</param>
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var settingsform = new Settings(autoTyper.TypeSettings);
             settingsform.Visible = true;
         }
 
+        /// <summary>
+        /// Updates all ChunkComponent views in the configuration window
+        /// </summary>
         private void updateView()
         {
             foreach(var chunkControl in chunkControls)
@@ -56,6 +98,9 @@ namespace AutoTyperGUI.View
             }
         }
 
+        /// <summary>
+        /// Initialize ChunkControl views based on the model
+        /// </summary>
         private void initChunkControls()
         {
             this.chunkControls = new List<View.ChunkControl>();
