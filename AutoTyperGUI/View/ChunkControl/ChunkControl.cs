@@ -46,9 +46,8 @@ namespace AutoTyperGUI.View
             var key = e.KeyCode;
             var modifier = (ModifierKeys)((uint)((e.Alt ? 1 : 0) + (e.Control ? 2 : 0) + (e.Shift ? 4 : 0)));
 
-            if (key != Keys.ShiftKey && key != Keys.ControlKey && key != Keys.Alt)
+            if (key != Keys.ShiftKey && key != Keys.ControlKey && key != Keys.Alt && modifier != null)
             {
-                autoTypeKHButton.Text = modifier.ToString() + "+" + key.ToString();
                 autotypeLabel.Focus(); // To unfocus the button after assignment
                 Chunk.AutoTypeKHook.HotKey = new HotKey(modifier, key);
             }
@@ -66,7 +65,7 @@ namespace AutoTyperGUI.View
             var key = e.KeyCode;
             var modifier = (ModifierKeys)((uint)((e.Alt ? 1 : 0) + (e.Control ? 2 : 0) + (e.Shift ? 4 : 0)));
 
-            if (key != Keys.ShiftKey && key != Keys.ControlKey && key != Keys.Alt)
+            if (key != Keys.ShiftKey && key != Keys.ControlKey && key != Keys.Alt && modifier != null)
             {
                 clipboardKHButton.Text = modifier.ToString() + "+" + key.ToString();
                 clipboardLabel.Focus(); // To unfocus the button after assignment
