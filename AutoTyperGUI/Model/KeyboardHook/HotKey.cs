@@ -27,7 +27,7 @@ namespace AutoTyperGUI.Model.KeyboardHook
             if (hk == null)
                 return false;
             else
-                return base.Equals((HotKey)obj) && hk.Key.Equals(this.Key) && hk.ModifierKeys.Equals(this.ModifierKeys);
+                return base.Equals((HotKey)obj) || hk.Key.Equals(this.Key) && hk.ModifierKeys.Equals(this.ModifierKeys);
         }
     }
 }

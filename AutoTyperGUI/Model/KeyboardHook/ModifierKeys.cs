@@ -52,10 +52,10 @@ namespace AutoTyperGUI
         public override bool Equals(object obj)
         {
             ModifierKeys mk = obj as ModifierKeys;
-            if (mk != null)
+            if (mk == null)
                 return false;
             else
-                return base.Equals((ModifierKeys)obj) && mk.Value == this.Value;
+                return base.Equals((ModifierKeys)obj) || mk.Value == this.Value;
         }
     }
 }

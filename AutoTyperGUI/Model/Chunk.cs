@@ -16,6 +16,7 @@ namespace AutoTyperGUI
         private int charCounter;
         private Timer timer;
         private Random random;
+        private string currentText;
         public string Text { get; set; }
         public KeyboardHook ClipboardKHook 
         {
@@ -56,13 +57,15 @@ namespace AutoTyperGUI
         private void autoTypeHandler(object sender, KeyPressedEventArgs e)
         {
             charCounter = 0;
+            currentText = Text; //Need to create a checkpoint for the Text, otherwiese can infinetly type into the text window
             timer.Interval = TypeSettings.TypingSpeed.MillisecondsPerChar;
+            System.Threading.Thread.Sleep(500); //Unnoticable delay for user, but needed for releasing the key
             timer.Start();
         }
 
         private void writeCharOnTick(object sender, EventArgs e)
         {
-            if(charCounter >= Text.Length)
+            if(charCounter >= currentText.Length)
             {
                 CancelTyping();
             }
@@ -79,7 +82,7 @@ namespace AutoTyperGUI
                     timer.Interval = randomInterval;
                     timer.Start();
                 }
-                SendKeys.Send(Text[charCounter].ToString());
+                SendKeys.Send(currentText[charCounter].ToString());
                 charCounter++;
             }
         }

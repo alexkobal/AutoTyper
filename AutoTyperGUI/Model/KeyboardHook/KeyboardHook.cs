@@ -76,12 +76,13 @@ namespace AutoTyperGUI
             get { return _hotKey; }
             set 
             {
-                if (_hotKey == null && value == null) return;
+                if (_hotKey == null && value == null) 
+                    return;
                 if (value != null)
                 {
-                    if (_hotKey != null && _hotKey.Equals(value)) return;
-                    try
-                    {
+                    if (_hotKey != null && _hotKey.Equals(value)) 
+                        return;
+                    try{
                         UnregisterHotKey();
                     }catch(Exception e)
                     {

@@ -19,7 +19,7 @@ namespace AutoTyperGUI.View.Settings
 
         private void Settings_Load(object sender, EventArgs e)
         {
-            trackBar1.Value = AutoTyper.Instance.TypeSettings.TypingSpeed.CharsPerMin;
+            trackBar1.Value = AutoTyper.Instance.TypeSettings.TypingSpeed.WordsPerMin;
             label3.Text = trackBar1.Value.ToString();
             if (AutoTyper.Instance.TypeSettings.StdDeviation == 0)
                 checkBox1.Checked = false;
@@ -34,7 +34,7 @@ namespace AutoTyperGUI.View.Settings
 
         private void OK_Click(object sender, EventArgs e)
         {
-            AutoTyper.Instance.TypeSettings.TypingSpeed.CharsPerMin = trackBar1.Value;
+            AutoTyper.Instance.TypeSettings.TypingSpeed.WordsPerMin = trackBar1.Value;
             if (checkBox1.Checked)
                 AutoTyper.Instance.TypeSettings.StdDeviation = 30;
             else

@@ -28,7 +28,7 @@ namespace AutoTyperGUI
 
         private AutoTyper()
         {
-            initTestValues();
+            initDefaultValues();
         }
         public static AutoTyper Instance { get => instance; }
 
@@ -145,44 +145,7 @@ namespace AutoTyperGUI
             }
         }
 
-        public static KeyboardHook parseHotKey(List<string> keys)
-        {
-            List<ModifierKeys> modKeys = new List<ModifierKeys>(4);
-            List<int> idxs = new List<int>(4);
-            for (int i = 0; i < keys.Count; i++)
-            {
-                if (keys[i] == Keys.Alt.ToString())
-                {
-                    modKeys.Add(ModifierKeys.Alt);
-                    idxs.Add(i);
-                }
-                if (keys[i] == Keys.Control.ToString())
-                {
-                    modKeys.Add(ModifierKeys.Control);
-                    idxs.Add(i);
-                }
-                if (keys[i] == Keys.Shift.ToString())
-                {
-                    modKeys.Add(ModifierKeys.Shift);
-                    idxs.Add(i);
-                }
-                if (keys[i] == Keys.LWin.ToString())
-                {
-                    modKeys.Add(ModifierKeys.Win);
-                    idxs.Add(i);
-                }
-            }
-            for (int i = 1; i < modKeys.Count; i++)
-                modKeys[0] += modKeys[i];
-            for (int i = idxs.Count - 1; i >= 0; i--)
-                keys.Remove(keys[idxs[i]]);
-            if (keys.Count == 1)
-                return null;// new KeyboardHook(modKeys[0], (Keys)Enum.Parse(typeof(Keys), keys[0]));
-            else
-                return null;
-        }
-
-        private void initTestValues() //Values are hardcoded for testing
+        private void initDefaultValues() //Default values are hardcoded
         {
             string[] textChunks;
             HotKey[] clipboardHotKeys;

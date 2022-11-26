@@ -49,15 +49,15 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.LargeChange = 40;
+            this.trackBar1.LargeChange = 10;
             this.trackBar1.Location = new System.Drawing.Point(217, 12);
-            this.trackBar1.Maximum = 600;
-            this.trackBar1.Minimum = 200;
+            this.trackBar1.Maximum = 300;
+            this.trackBar1.Minimum = 50;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(300, 45);
-            this.trackBar1.SmallChange = 8;
+            this.trackBar1.SmallChange = 5;
             this.trackBar1.TabIndex = 1;
-            this.trackBar1.TickFrequency = 40;
+            this.trackBar1.TickFrequency = 50;
             this.trackBar1.Value = 200;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 150);
+            this.ClientSize = new System.Drawing.Size(535, 150);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.OK);
             this.Controls.Add(this.label3);
