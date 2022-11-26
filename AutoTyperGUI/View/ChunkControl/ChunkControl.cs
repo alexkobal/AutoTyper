@@ -4,14 +4,29 @@ using System.Windows.Forms;
 
 namespace AutoTyperGUI.View
 {
+    /// <summary>
+    /// Class for the Chunk visualization component
+    /// </summary>
     public partial class ChunkControl : UserControl
     {
+        /// <summary>
+        /// Internal refference to the connected chunk
+        /// </summary>
         private Chunk Chunk { get; }
+
+        /// <summary>
+        /// Constructor, has to be initialized with the connected Chunk model object refference
+        /// </summary>
+        /// <param name="chunk">Chunk model refference</param>
         public ChunkControl(Chunk chunk)
         {
             InitializeComponent();
             Chunk = chunk;
         }
+
+        /// <summary>
+        /// Update the Chunk View
+        /// </summary>
         public void updateView()
         {
             textBox.Text = Chunk.Text;
@@ -19,6 +34,12 @@ namespace AutoTyperGUI.View
             autoTypeKHButton.Text = Chunk.AutoTypeKHook.ToString();
         }
 
+        /// <summary>
+        /// Event handler for keyboard press when the auto typing keyboard hook button is in focus
+        /// Sets the keyboard hook to the input key combination if it is valid.
+        /// </summary>
+        /// <param name="sender">Event sender object</param>
+        /// <param name="e">Event arguments</param>
         private void autoTypeKHButton_KeyDown(object sender, KeyEventArgs e)
         {
             // The keycodes are not the same in Keys and in WIN32 api, so values are created based on the bool flags
@@ -32,6 +53,13 @@ namespace AutoTyperGUI.View
                 Chunk.AutoTypeKHook.HotKey = new HotKey(modifier, key);
             }
         }
+
+        /// <summary>
+        /// Event handler for keyboard press when the copy to clipboard keyboard hook button is in focus
+        /// Sets the keyboard hook to the input key combination if it is valid.
+        /// </summary>
+        /// <param name="sender">Event sender object</param>
+        /// <param name="e">Event arguments</param>
         private void clipboardKHButton_KeyDown(object sender, KeyEventArgs e)
         {
             // The keycodes are not the same in Keys and in WIN32 api, so values are created based on the bool flags
@@ -47,6 +75,12 @@ namespace AutoTyperGUI.View
             }
         }
 
+        /// <summary>
+        /// Event handler for text changes
+        /// Updates the Chunk model's text when the text in the textbox changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox_TextChanged(object sender, EventArgs e)
         {
             Chunk.Text = textBox.Text;

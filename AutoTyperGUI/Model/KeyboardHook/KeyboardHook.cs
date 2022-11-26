@@ -4,6 +4,9 @@ using System.Windows.Forms;
 
 namespace AutoTyperGUI.Model
 {
+    /// <summary>
+    /// Class for handling keyboard hooks in Win32 API
+    /// </summary>
     public sealed class KeyboardHook : IDisposable
     {
         // Registers a hot key with Windows.
@@ -63,6 +66,11 @@ namespace AutoTyperGUI.Model
         private int _currentId;
         private HotKey _hotKey = null;
 
+        /// <summary>
+        /// Assigned HotKey property.
+        /// If set, the previous value is unregistered
+        /// This is the way you can change the assigned HotKey value
+        /// </summary>
         public HotKey HotKey
         {
             get { return _hotKey; }
@@ -107,7 +115,6 @@ namespace AutoTyperGUI.Model
         /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
-        /// <exception cref="InvalidOperationException">Throws an exception if it was not possible to register the key hook</exception>
         private void RegisterHotKey(HotKey hotKey)
         {
             // increment the counter.
@@ -127,6 +134,10 @@ namespace AutoTyperGUI.Model
                 
         }
 
+        /// <summary>
+        /// Unregisters the HotKey
+        /// If unregistration is successful sets the HotKey value to null
+        /// </summary>
         private void UnregisterHotKey()
         {
             bool t = UnregisterHotKey(_window.Handle, _currentId);
@@ -142,6 +153,10 @@ namespace AutoTyperGUI.Model
             
         }
 
+        /// <summary>
+        /// Get the string representation of the HotKey
+        /// </summary>
+        /// <returns>The string representation of the HotKey if it is not null. "Error" otherwise</returns>
         public override string ToString()
         {
             if (HotKey != null)

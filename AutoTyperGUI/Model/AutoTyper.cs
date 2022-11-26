@@ -4,23 +4,51 @@ using System.Xml;
 
 namespace AutoTyperGUI.Model
 {
+    /// <summary>
+    /// Singleton application controller class
+    /// </summary>
     internal class AutoTyper
     {
-        private KeyboardHook cancelTypingKHook;
+        /// <summary>
+        /// Internal instance of the class (Singleton design pattern)
+        /// </summary>
         private readonly static AutoTyper instance = new AutoTyper();
+
+        /// <summary>
+        /// Array of the contained chunks (initialised in constructor)
+        /// </summary>
         public Chunk[] Chunks { get; private set; }
+
+        /// <summary>
+        /// Global typing settings. A refference is assigned to each Chunk (initialized in constructor)
+        /// </summary>
         public AutoTypeSettings TypeSettings { get; }
+
+        /// <summary>
+        /// Keyboard hook for typing cancellation. Can be assigned by its HotKey property.
+        /// </summary>
         public KeyboardHook CancelTypingKHook { get; }
 
-
+        /// <summary>
+        /// Private constructor for singleton implementation
+        /// </summary>
         private AutoTyper()
         {
             CancelTypingKHook = new KeyboardHook();
+            CancelTypingKHook.KeyPressed += CancelTypingHook_KeyPressed;
             TypeSettings = new AutoTypeSettings();
             initChunks();
         }
+
+        /// <summary>
+        /// Property to access the instance of the model (Singleton desing pattern)
+        /// </summary>
         public static AutoTyper Instance { get => instance; }
 
+        /// <summary>
+        /// Saves the model to a given xml file
+        /// </summary>
+        /// <param name="fileName">The name of the saved file</param>
         public void save(string fileName)
         {
             XmlTextWriter xmlTextWriter = new XmlTextWriter(fileName, System.Text.Encoding.UTF8);
@@ -74,7 +102,11 @@ namespace AutoTyperGUI.Model
             xmlTextWriter.Close();
         }
 
-        public void open(string fileName)
+        /// <summary>
+        /// Loads the model contents from an xml file
+        /// </summary>
+        /// <param name="fileName"></param>
+        public void load(string fileName)
         {
             XmlTextReader xmlTextReader = new XmlTextReader(fileName);
 
@@ -134,6 +166,9 @@ namespace AutoTyperGUI.Model
             }
         }
 
+        /// <summary>
+        /// Used to initialize the chunks in the default model.
+        /// </summary>
         private void initChunks() //Default values are hardcoded
         {
             string[] textChunks;
@@ -197,6 +232,11 @@ namespace AutoTyperGUI.Model
             }
         }
 
+        /// <summary>
+        /// Event handler for the CancelTyping keyboard hook
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelTypingHook_KeyPressed(object sender, KeyPressedEventArgs e)
         {
             foreach (var chunk in Chunks)
