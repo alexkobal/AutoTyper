@@ -1,39 +1,25 @@
-﻿using AutoTyperGUI.Properties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
-namespace AutoTyperGUI
+namespace AutoTyperGUI.Model
 {
     public class Chunk
     {
-        private KeyboardHook clipboardKHook;
-        private KeyboardHook autoTypeKHook;
         private int charCounter;
-        private Timer timer;
-        private Random random;
+        private readonly Timer timer;
+        private readonly Random random;
         private string currentText;
         public string Text { get; set; }
-        public KeyboardHook ClipboardKHook 
-        {
-            get { return clipboardKHook; }
-        }
-        public KeyboardHook AutoTypeKHook
-        {
-            get { return autoTypeKHook; }
-        }
+        public KeyboardHook ClipboardKHook { get; }
+        public KeyboardHook AutoTypeKHook { get; }
 
-        public AutoTypeSettings TypeSettings { get; private set; }
+        public AutoTypeSettings TypeSettings { get; }
 
         public Chunk(string text, KeyboardHook clipboardKHook, KeyboardHook autoTypeKHook, AutoTypeSettings autoTypeSettings)
         {
             this.Text = text;
-            this.clipboardKHook = clipboardKHook;
-            this.autoTypeKHook = autoTypeKHook;
+            this.ClipboardKHook = clipboardKHook;
+            this.AutoTypeKHook = autoTypeKHook;
             this.TypeSettings = autoTypeSettings;
             this.ClipboardKHook.KeyPressed += copyToClipboardHandler;
             this.AutoTypeKHook.KeyPressed += autoTypeHandler;

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AutoTyperGUI
+namespace AutoTyperGUI.View
 {
     partial class ConfigurationWindow
     {

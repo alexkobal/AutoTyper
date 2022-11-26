@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoTyperGUI.Model;
+using System;
 using System.Windows.Forms;
 
 namespace AutoTyperGUI.View
 {
     public partial class ChunkControl : UserControl
     {
-        private Chunk _chunk;
-        public Chunk Chunk { get { return _chunk; } }
+        private Chunk Chunk { get; }
         public ChunkControl(Chunk chunk)
         {
             InitializeComponent();
-            _chunk = chunk;
+            Chunk = chunk;
         }
         public void updateView()
         {
@@ -36,7 +29,7 @@ namespace AutoTyperGUI.View
             {
                 autoTypeKHButton.Text = modifier.ToString() + "+" + key.ToString();
                 autotypeLabel.Focus(); // To unfocus the button after assignment
-                Chunk.AutoTypeKHook.HotKey = new Model.KeyboardHook.HotKey(modifier, key);
+                Chunk.AutoTypeKHook.HotKey = new HotKey(modifier, key);
             }
         }
         private void clipboardKHButton_KeyDown(object sender, KeyEventArgs e)
@@ -49,7 +42,7 @@ namespace AutoTyperGUI.View
             {
                 clipboardKHButton.Text = modifier.ToString() + "+" + key.ToString();
                 clipboardLabel.Focus(); // To unfocus the button after assignment
-                Chunk.ClipboardKHook.HotKey = new Model.KeyboardHook.HotKey(modifier, key);
+                Chunk.ClipboardKHook.HotKey = new HotKey(modifier, key);
                 clipboardKHButton.Text = Chunk.ClipboardKHook.ToString();
             }
         }

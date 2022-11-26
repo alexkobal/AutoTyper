@@ -1,15 +1,9 @@
-﻿using System;
+﻿using AutoTyperGUI.Model;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using AutoTyperGUI.View.Settings;
 
-namespace AutoTyperGUI
+namespace AutoTyperGUI.View
 {
     public partial class ConfigurationWindow : Form
     {
@@ -50,7 +44,7 @@ namespace AutoTyperGUI
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var settingsform = new Settings();
+            var settingsform = new Settings(autoTyper.TypeSettings);
             settingsform.Visible = true;
         }
 

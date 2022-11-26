@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AutoTyperGUI.Model.AutoTyper">
+    <Position X="16.5" Y="2" Width="2.75" />
+    <Members>
+      <Method Name="AutoTyper" Hidden="true" />
+      <Method Name="CancelTypingHook_KeyPressed" Hidden="true" />
+      <Field Name="cancelTypingKHook" Hidden="true" />
+      <Method Name="initChunks" Hidden="true" />
+      <Field Name="instance" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAACEAAAACAAAAAACAABCAAAABAAAAAQAAAAEAAABA=</HashCode>
+      <FileName>Model\AutoTyper.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TypeSettings" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Chunks" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="AutoTyperGUI.Model.AutoTypeSettings">
+    <Position X="17" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\AutoTypeSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TypingSpeed" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutoTyperGUI.Model.TypingSpeed">
+    <Position X="17" Y="11.75" Width="2" />
+    <Members>
+      <Field Name="charsPerMin" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAgEBAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\AutoTypeSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoTyperGUI.Model.Chunk">
+    <Position X="19.5" Y="5.75" Width="1.75" />
+    <Members>
+      <Method Name="autoTypeHandler" Hidden="true" />
+      <Field Name="charCounter" Hidden="true" />
+      <Method Name="copyToClipboardHandler" Hidden="true" />
+      <Field Name="currentText" Hidden="true" />
+      <Field Name="random" Hidden="true" />
+      <Method Name="sampleGaussian" Hidden="true" />
+      <Field Name="timer" Hidden="true" />
+      <Method Name="writeCharOnTick" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="AutoTypeKHook" Type="AutoTyperGUI.Model.KeyboardHook" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.531" Y="5.75" />
+        <Point X="20.531" Y="3.25" />
+        <Point X="21.5" Y="3.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ClipboardKHook" Type="AutoTyperGUI.Model.KeyboardHook" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.922" Y="5.75" />
+        <Point X="20.922" Y="3.875" />
+        <Point X="21.5" Y="3.875" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAQAAAAAAABAAAgABAQAAAAAAgBAAAQADQAAAIA=</HashCode>
+      <FileName>Model\Chunk.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AutoTypeKHook" />
+      <Property Name="ClipboardKHook" />
+      <Property Name="TypeSettings" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutoTyperGUI.Model.HotKey">
+    <Position X="22.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEgAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\KeyboardHook\HotKey.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Key" />
+      <Property Name="ModifierKeys" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutoTyperGUI.Model.KeyboardHook" BaseTypeListCollapsed="true">
+    <Position X="21.5" Y="2" Width="3.5" />
+    <Members>
+      <Field Name="_currentId" Hidden="true" />
+      <Field Name="_hotKey" Hidden="true" />
+      <Field Name="_window" Hidden="true" />
+      <Method Name="RegisterHotKey" Hidden="true" />
+      <Method Name="UnregisterHotKey" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="AutoTyperGUI.Model.KeyboardHook.Window" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Model\KeyboardHook\KeyboardHook.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAEAAAAQAAIAgAAAAAAAQAAAABACAA=</HashCode>
+      <FileName>Model\KeyboardHook\KeyboardHook.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="HotKey" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AutoTyperGUI.Model.ModifierKeys">
+    <Position X="21.75" Y="10.25" Width="3.25" />
+    <Members>
+      <Field Name="_numericValue" Hidden="true" />
+      <Field Name="_text" Hidden="true" />
+      <Method Name="getByValue" Hidden="true" />
+      <Method Name="ModifierKeys" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAFAAAAAAgEwEAIgAAAAAAAAAAIAIAgCAAAAAA=</HashCode>
+      <FileName>Model\KeyboardHook\ModifierKeys.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoTyperGUI.View.ChunkControl">
+    <Position X="13.25" Y="4.25" Width="1.75" />
+    <Members>
+      <Field Name="autoTypeKHButton" Hidden="true" />
+      <Method Name="autoTypeKHButton_KeyDown" Hidden="true" />
+      <Field Name="autotypeLabel" Hidden="true" />
+      <Field Name="clipboardKHButton" Hidden="true" />
+      <Method Name="clipboardKHButton_KeyDown" Hidden="true" />
+      <Field Name="clipboardLabel" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="textBox" Hidden="true" />
+      <Method Name="textBox_TextChanged" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Protected" Collapsed="true" />
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAAEAAAKAgAAACAACAIQACAAAAAABAAAAAEAAAACA=</HashCode>
+      <FileName>View\ChunkControl\ChunkControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Chunk" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutoTyperGUI.View.ConfigurationWindow">
+    <Position X="13.25" Y="2" Width="2" />
+    <Members>
+      <Field Name="autoTyper" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="fileToolStripMenuItem" Hidden="true" />
+      <Field Name="flowLayoutPanel1" Hidden="true" />
+      <Method Name="initChunkControls" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="loadToolStripMenuItem" Hidden="true" />
+      <Method Name="loadToolStripMenuItem_Click" Hidden="true" />
+      <Field Name="menuStrip1" Hidden="true" />
+      <Field Name="openFileDialog" Hidden="true" />
+      <Field Name="saveFileDialog" Hidden="true" />
+      <Field Name="saveToolStripMenuItem" Hidden="true" />
+      <Method Name="saveToolStripMenuItem_Click" Hidden="true" />
+      <Field Name="settingsToolStripMenuItem" Hidden="true" />
+      <Method Name="settingsToolStripMenuItem_Click" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Method Name="updateView" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Protected" Collapsed="true" />
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BQAAACAAAGABAAgAACCAwQACAIAAAIAAAAAAAIAAACA=</HashCode>
+      <FileName>View\ConfigurationWindow\ConfigurationWindow.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="autoTyper" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="chunkControls" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="AutoTyperGUI.View.Settings">
+    <Position X="13.25" Y="7" Width="1.5" />
+    <Members>
+      <Field Name="Cancel" Hidden="true" />
+      <Method Name="Cancel_Click" Hidden="true" />
+      <Field Name="checkBox1" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="OK" Hidden="true" />
+      <Method Name="OK_Click" Hidden="true" />
+      <Method Name="Settings_Load" Hidden="true" />
+      <Field Name="wpmSpeedLabel" Hidden="true" />
+      <Field Name="wpmTrackBar" Hidden="true" />
+      <Method Name="wpmTrackBar_Scroll" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Protected" Collapsed="true" />
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABQAgQCAAABAAAACAAAACAAEAAgAAAABBAAEIAAA=</HashCode>
+      <FileName>View\Settings\Settings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AutoTypeSettings" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="System.Windows.Forms.Keys" Collapsed="true">
+    <Position X="25.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

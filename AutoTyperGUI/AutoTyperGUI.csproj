@@ -70,16 +70,16 @@
     <Compile Include="Model\Chunk.cs" />
     <Compile Include="Model\KeyboardHook\HotKey.cs" />
     <Compile Include="Model\KeyboardHook\KeyboardHook.cs" />
-    <Compile Include="View\ChunkControl.cs">
+    <Compile Include="View\ChunkControl\ChunkControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\ChunkControl.Designer.cs">
+    <Compile Include="View\ChunkControl\ChunkControl.Designer.cs">
       <DependentUpon>ChunkControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ConfigurationWindow.cs">
+    <Compile Include="View\ConfigurationWindow\ConfigurationWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ConfigurationWindow.Designer.cs">
+    <Compile Include="View\ConfigurationWindow\ConfigurationWindow.Designer.cs">
       <DependentUpon>ConfigurationWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AutoTyperApplicationContext.cs" />
@@ -94,10 +94,10 @@
     <Compile Include="View\Settings\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\ChunkControl.resx">
+    <EmbeddedResource Include="View\ChunkControl\ChunkControl.resx">
       <DependentUpon>ChunkControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ConfigurationWindow.resx">
+    <EmbeddedResource Include="View\ConfigurationWindow\ConfigurationWindow.resx">
       <DependentUpon>ConfigurationWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -113,6 +113,7 @@
     <EmbeddedResource Include="View\Settings\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

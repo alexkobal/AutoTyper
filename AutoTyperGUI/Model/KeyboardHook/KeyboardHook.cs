@@ -1,16 +1,8 @@
-﻿using AutoTyperGUI.Model.KeyboardHook;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
+﻿using System;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutoTyperGUI
+namespace AutoTyperGUI.Model
 {
     public sealed class KeyboardHook : IDisposable
     {

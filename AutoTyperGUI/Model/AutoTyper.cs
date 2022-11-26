@@ -1,34 +1,23 @@
-﻿using AutoTyperGUI.Model.KeyboardHook;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace AutoTyperGUI
+namespace AutoTyperGUI.Model
 {
     internal class AutoTyper
     {
         private KeyboardHook cancelTypingKHook;
         private readonly static AutoTyper instance = new AutoTyper();
         public Chunk[] Chunks { get; private set; }
-        public AutoTypeSettings TypeSettings { get; private set; }
-        public KeyboardHook CancelTypingKHook
-        {
-            get { return cancelTypingKHook; }
-            set
-            {
-                if (cancelTypingKHook != null)
-                    cancelTypingKHook.Dispose(); // Unregisters the previous keyboard hook if any
-                cancelTypingKHook = value;
-            }
-        }
+        public AutoTypeSettings TypeSettings { get; }
+        public KeyboardHook CancelTypingKHook { get; }
+
 
         private AutoTyper()
         {
-            initDefaultValues();
+            CancelTypingKHook = new KeyboardHook();
+            TypeSettings = new AutoTypeSettings();
+            initChunks();
         }
         public static AutoTyper Instance { get => instance; }
 
@@ -145,7 +134,7 @@ namespace AutoTyperGUI
             }
         }
 
-        private void initDefaultValues() //Default values are hardcoded
+        private void initChunks() //Default values are hardcoded
         {
             string[] textChunks;
             HotKey[] clipboardHotKeys;
@@ -196,7 +185,7 @@ namespace AutoTyperGUI
                 new HotKey(ModifierKeys.Control, Keys.F12)
             };
 
-            TypeSettings = new AutoTypeSettings();
+            
             Chunks = new Chunk[12];
             for (int i = 0; i < 12; i++)
             {
