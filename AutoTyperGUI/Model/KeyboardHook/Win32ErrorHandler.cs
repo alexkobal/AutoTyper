@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace AutoTyperGUI
+namespace AutoTyperGUI.Model
 {
+    /// <summary>
+    /// Class for getting verbose Win32 error messages
+    /// </summary>
     internal class Win32ErrorHandler
     {
         [DllImport("kernel32.dll")]
@@ -15,6 +15,10 @@ namespace AutoTyperGUI
         [DllImport("kernel32.dll")]
         private static extern uint GetLastError();
 
+        /// <summary>
+        /// Get last error message in human readable format
+        /// </summary>
+        /// <returns>Meaningfull error message as a string</returns>
         public static string GetLastErrorString()
         {
             uint lastError = GetLastError();
@@ -28,6 +32,9 @@ namespace AutoTyperGUI
             }
         }
 
+        /// <summary>
+        /// Enum for different error messag types
+        /// </summary>
         enum FORMAT_MESSAGE : uint
         {
             ALLOCATE_BUFFER = 0x00000100,
