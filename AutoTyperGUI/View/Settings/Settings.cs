@@ -1,44 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoTyperGUI.Model;
+using System;
 using System.Windows.Forms;
 
-namespace AutoTyperGUI.View.Settings
+namespace AutoTyperGUI.View
 {
     public partial class Settings : Form
     {
-        public Settings()
+        private AutoTypeSettings AutoTypeSettings { get; }
+        public Settings(AutoTypeSettings autoTypeSettings)
         {
+            AutoTypeSettings = autoTypeSettings;
             InitializeComponent();
         }
 
         private void Settings_Load(object sender, EventArgs e)
         {
-            trackBar1.Value = AutoTyper.Instance.TypeSettings.TypingSpeed.CharsPerMin;
-            label3.Text = trackBar1.Value.ToString();
-            if (AutoTyper.Instance.TypeSettings.StdDeviation == 0)
+            wpmTrackBar.Value = AutoTypeSettings.TypingSpeed.WordsPerMin;
+            wpmSpeedLabel.Text = wpmTrackBar.Value.ToString();
+            if (AutoTypeSettings.StdDeviation == 0)
                 checkBox1.Checked = false;
             else
                 checkBox1.Checked = true;
         }
 
-        private void trackBar1_Scroll(object sender, EventArgs e)
+        private void wpmTrackBar_Scroll(object sender, EventArgs e)
         {
-            label3.Text = trackBar1.Value.ToString();
+            wpmSpeedLabel.Text = wpmTrackBar.Value.ToString();
         }
 
         private void OK_Click(object sender, EventArgs e)
         {
-            AutoTyper.Instance.TypeSettings.TypingSpeed.CharsPerMin = trackBar1.Value;
+            AutoTypeSettings.TypingSpeed.WordsPerMin = wpmTrackBar.Value;
             if (checkBox1.Checked)
-                AutoTyper.Instance.TypeSettings.StdDeviation = 30;
+                AutoTypeSettings.StdDeviation = 30;
             else
-                AutoTyper.Instance.TypeSettings.StdDeviation = 0;
+                AutoTypeSettings.StdDeviation = 0;
             this.Close();
         }
 

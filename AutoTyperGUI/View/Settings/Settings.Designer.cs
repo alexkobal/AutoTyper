@@ -1,4 +1,4 @@
-﻿namespace AutoTyperGUI.View.Settings
+﻿namespace AutoTyperGUI.View
 {
     partial class Settings
     {
@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.wpmTrackBar = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.wpmSpeedLabel = new System.Windows.Forms.Label();
             this.OK = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wpmTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -49,17 +49,17 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.LargeChange = 40;
-            this.trackBar1.Location = new System.Drawing.Point(217, 12);
-            this.trackBar1.Maximum = 600;
-            this.trackBar1.Minimum = 200;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(300, 45);
-            this.trackBar1.SmallChange = 8;
-            this.trackBar1.TabIndex = 1;
-            this.trackBar1.TickFrequency = 40;
-            this.trackBar1.Value = 200;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.wpmTrackBar.LargeChange = 10;
+            this.wpmTrackBar.Location = new System.Drawing.Point(217, 12);
+            this.wpmTrackBar.Maximum = 300;
+            this.wpmTrackBar.Minimum = 50;
+            this.wpmTrackBar.Name = "trackBar1";
+            this.wpmTrackBar.Size = new System.Drawing.Size(300, 45);
+            this.wpmTrackBar.SmallChange = 5;
+            this.wpmTrackBar.TabIndex = 1;
+            this.wpmTrackBar.TickFrequency = 50;
+            this.wpmTrackBar.Value = 200;
+            this.wpmTrackBar.Scroll += new System.EventHandler(this.wpmTrackBar_Scroll);
             // 
             // label1
             // 
@@ -83,13 +83,13 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(163, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "200";
+            this.wpmSpeedLabel.AutoSize = true;
+            this.wpmSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.wpmSpeedLabel.Location = new System.Drawing.Point(163, 22);
+            this.wpmSpeedLabel.Name = "label3";
+            this.wpmSpeedLabel.Size = new System.Drawing.Size(48, 25);
+            this.wpmSpeedLabel.TabIndex = 4;
+            this.wpmSpeedLabel.Text = "200";
             // 
             // OK
             // 
@@ -115,19 +115,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 150);
+            this.ClientSize = new System.Drawing.Size(535, 150);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.OK);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.wpmSpeedLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.wpmTrackBar);
             this.Controls.Add(this.checkBox1);
             this.Name = "Settings";
             this.ShowIcon = false;
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wpmTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,10 +136,10 @@
         #endregion
 
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar wpmTrackBar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label wpmSpeedLabel;
         private System.Windows.Forms.Button OK;
         private System.Windows.Forms.Button Cancel;
     }

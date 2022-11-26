@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutoTyperGUI
+namespace AutoTyperGUI.Model
 {
     public sealed class KeyboardHook : IDisposable
     {
@@ -67,9 +61,33 @@ namespace AutoTyperGUI
 
         private Window _window = new Window();
         private int _currentId;
-        //text property
-        private ModifierKeys _modifierKeys;
-        private Keys _keys;
+        private HotKey _hotKey = null;
+
+        public HotKey HotKey
+        {
+            get { return _hotKey; }
+            set 
+            {
+                if (_hotKey == null && value == null) 
+                    return;
+                if (value != null)
+                {
+                    if (_hotKey != null && _hotKey.Equals(value)) 
+                        return;
+                    try{
+                        UnregisterHotKey();
+                    }catch(Exception e)
+                    {
+                       if (_hotKey != null) throw e;
+                    }
+                    RegisterHotKey(value);
+                }
+                else if (_hotKey != null && value == null)
+                {
+                    UnregisterHotKey();
+                }
+            }
+        }
 
         /// <summary>
         /// Default constructor
@@ -85,42 +103,50 @@ namespace AutoTyperGUI
         }
 
         /// <summary>
-        /// Constructor that immediately registers a key
-        /// </summary>
-        /// <param name="modifier">The modifiers that are associated with the hot key.</param>
-        /// <param name="key">The key itself that is associated with the hot key.</param>
-        /// <exception cref="InvalidOperationException">Throws an exception if it was not possible to register the key hook</exception>
-        public KeyboardHook(ModifierKeys modifier, Keys key) : this()
-        {
-            this.RegisterHotKey(modifier, key);
-            _modifierKeys = modifier;
-            _keys = key;
-        }
-
-        /// <summary>
         /// Registers a hot key in the system.
         /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
         /// <exception cref="InvalidOperationException">Throws an exception if it was not possible to register the key hook</exception>
-        public void RegisterHotKey(ModifierKeys modifier, Keys key)
+        private void RegisterHotKey(HotKey hotKey)
         {
             // increment the counter.
             _currentId = _currentId + 1;
 
             // register the hot key.
-            bool t = RegisterHotKey(_window.Handle, _currentId, modifier.Value, (uint)key);
+            bool t = RegisterHotKey(_window.Handle, _currentId, hotKey.ModifierKeys.Value, (uint)hotKey.Key);
             if (!t)
             {
                 string errorM = Win32ErrorHandler.GetLastErrorString();
-                throw new InvalidOperationException("Couldn’t register the hot key. Error Message: " + errorM);
+                //throw new InvalidOperationException("Couldn’t register the hot key: " + HotKey.ToString() + " Error Message: " + errorM);
+            }
+            else
+            {
+                _hotKey = hotKey;
             }
                 
         }
 
-        override public string ToString()
+        private void UnregisterHotKey()
         {
-            return _modifierKeys.ToString()+"+"+_keys.ToString();
+            bool t = UnregisterHotKey(_window.Handle, _currentId);
+            if (!t)
+            {
+                string errorM = Win32ErrorHandler.GetLastErrorString();
+                //throw new InvalidOperationException("Couldn’t unregister the hot key: " + HotKey.ToString() + " Error Message: " + errorM);
+            }
+            else
+            {
+                _hotKey = null;
+            }
+            
+        }
+
+        public override string ToString()
+        {
+            if (HotKey != null)
+                return HotKey.ToString();
+            return "Error";
         }
 
         /// <summary>

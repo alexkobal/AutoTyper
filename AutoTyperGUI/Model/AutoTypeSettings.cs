@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutoTyperGUI
+﻿namespace AutoTyperGUI.Model
 {
-    internal class AutoTypeSettings
+    public class AutoTypeSettings
     {
         public TypingSpeed TypingSpeed { get; set; }
         public int StdDeviation { get; set; }
@@ -19,7 +12,7 @@ namespace AutoTyperGUI
         }
     }
 
-    internal class TypingSpeed
+    public class TypingSpeed
     {
         private int charsPerMin;
         public TypingSpeed(int charsPerMin = 0)
