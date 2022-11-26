@@ -41,8 +41,10 @@ namespace AutoTyperGUI.View
 
             saveFileDialog = new SaveFileDialog();
             saveFileDialog.DefaultExt = "xml";
+            saveFileDialog.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
             openFileDialog = new OpenFileDialog();
             openFileDialog.DefaultExt = "xml";
+            openFileDialog.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
             updateView();
         }
 
