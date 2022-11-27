@@ -47,13 +47,13 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // trackBar1
+            // wpmTrackBar
             // 
             this.wpmTrackBar.LargeChange = 10;
-            this.wpmTrackBar.Location = new System.Drawing.Point(217, 12);
+            this.wpmTrackBar.Location = new System.Drawing.Point(323, 12);
             this.wpmTrackBar.Maximum = 300;
             this.wpmTrackBar.Minimum = 50;
-            this.wpmTrackBar.Name = "trackBar1";
+            this.wpmTrackBar.Name = "wpmTrackBar";
             this.wpmTrackBar.Size = new System.Drawing.Size(300, 45);
             this.wpmTrackBar.SmallChange = 5;
             this.wpmTrackBar.TabIndex = 1;
@@ -67,9 +67,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 25);
+            this.label1.Size = new System.Drawing.Size(251, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Typing Speed";
+            this.label1.Text = "Typing Speed (word/min)";
             // 
             // label2
             // 
@@ -81,19 +81,20 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Typeing Deviation";
             // 
-            // label3
+            // wpmSpeedLabel
             // 
             this.wpmSpeedLabel.AutoSize = true;
             this.wpmSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wpmSpeedLabel.Location = new System.Drawing.Point(163, 22);
-            this.wpmSpeedLabel.Name = "label3";
+            this.wpmSpeedLabel.Location = new System.Drawing.Point(269, 22);
+            this.wpmSpeedLabel.Name = "wpmSpeedLabel";
             this.wpmSpeedLabel.Size = new System.Drawing.Size(48, 25);
             this.wpmSpeedLabel.TabIndex = 4;
             this.wpmSpeedLabel.Text = "200";
+            this.wpmSpeedLabel.Click += new System.EventHandler(this.wpmSpeedLabel_Click);
             // 
             // OK
             // 
-            this.OK.Location = new System.Drawing.Point(98, 120);
+            this.OK.Location = new System.Drawing.Point(115, 120);
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(75, 23);
             this.OK.TabIndex = 5;
@@ -103,7 +104,7 @@
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(369, 120);
+            this.Cancel.Location = new System.Drawing.Point(445, 120);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 6;
@@ -115,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 150);
+            this.ClientSize = new System.Drawing.Size(644, 150);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.OK);
             this.Controls.Add(this.wpmSpeedLabel);
