@@ -77,5 +77,10 @@ namespace AutoTyperGUI.View
         {
             this.Close();
         }
+
+        private void wpmSpeedLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
